@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool withoutzeroes(string a,string b,string c){
+    a.erase(remove(a.begin(),a.end(),'0'),a.end());
+    b.erase(remove(b.begin(),b.end(),'0'),b.end());
+    c.erase(remove(c.begin(),c.end(),'0'),c.end());
+    int n1=stoi(a);
+    int n2=stoi(b);
+    int n3=stoi(c);
+    if(n3==n1+n2) return true;
+    return false;
+    
+}
+
+int main() {
+	string a,b;
+	cin>>a>>b;
+	int num_a,num_b;
+	num_a=stoi(a);
+	num_b=stoi(b);
+	int c=num_a+num_b;
+	string str_c=to_string(c);
+	
+	if(withoutzeroes(a,b,str_c)){
+	    cout<<"YES";
+	    return 0;
+	}
+	cout<<"NO";
+	
+}
