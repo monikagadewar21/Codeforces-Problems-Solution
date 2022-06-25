@@ -1,0 +1,23 @@
+n=int(input())
+stone=input()
+
+d=list(stone)
+i=1,c=0                              not compiled
+while(i<n):
+    
+    if(d[i-1]==d[i]):
+        c+=1
+
+print(c)
+
+
+n=int(input())
+stone=input()
+c=0
+d=list(stone)                        compiled
+
+for i in range(1,n):
+    if(d[i-1]==d[i]):
+        c+=1
+
+print(c)
