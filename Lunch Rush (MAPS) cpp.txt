@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int joy(int f, int t, int k){
+    if(t>k) return f-(t-k);
+    return f;
+}
+
+int main() {
+	int n,k;
+	cin>>n>>k;
+	multimap<int,int> m;
+	
+	for(int i=1;i<=n;i++ ){
+	    int f,t;
+	    cin>>f>>t;
+	    m.insert({joy(f,t,k),t});
+	    
+	}
+	
+	auto it=m.end();
+	it--;
+	cout<<(*it).first;
+}
