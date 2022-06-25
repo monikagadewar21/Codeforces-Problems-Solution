@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int s,n;
+	cin>>s>>n;
+	multimap<int,int>m;
+	for(int i=1;i<=n;i++){
+	    int x,y;
+	    cin>>x>>y;
+	    m.insert({x,y});
+	}
+	
+	for(auto p:m){
+	    if(s<=p.first){
+	        cout<<"NO";
+	        return 0;
+	    }
+	    s+=p.second;
+	}
+	cout<<"YES";
+}
